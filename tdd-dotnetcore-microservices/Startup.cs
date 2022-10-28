@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using tdd_dotnetcore_microservices.Repository;
 
 namespace tdd_dotnetcore_microservices
 {
@@ -18,7 +20,15 @@ namespace tdd_dotnetcore_microservices
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        { 
+        {
+            services.AddControllers()
+            .AddJsonOptions(opts => opts.JsonSerializerOptions.PropertyNamingPolicy = null);
+
+            services.AddDbContext<RepositoryContext>(options =>
+            {
+                options.UseSqlServer(Configuration?.GetConnectionString("DbConnectionString"));
+            });
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
