@@ -7,7 +7,7 @@ namespace tdd_dotnetcore_microservices.Models
     {
         private long _id;
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id
         {
             get { return _id; }
