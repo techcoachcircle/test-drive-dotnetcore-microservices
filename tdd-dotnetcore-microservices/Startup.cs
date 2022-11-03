@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using tdd_dotnetcore_microservices.Repository;
+using tdd_dotnetcore_microservices.Repository.Interfaces;
 using tdd_dotnetcore_microservices.Services;
 using tdd_dotnetcore_microservices.Services.Interfaces;
 
@@ -38,6 +39,7 @@ namespace tdd_dotnetcore_microservices
             });
 
             services.AddScoped<IEmployeesService, EmployeesService>();
+            services.AddScoped<IEmployeesRepository, EmployeesRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
