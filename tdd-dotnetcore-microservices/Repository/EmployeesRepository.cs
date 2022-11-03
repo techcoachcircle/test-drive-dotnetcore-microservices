@@ -9,9 +9,14 @@ namespace tdd_dotnetcore_microservices.Repository
 {
     public class EmployeesRepository : IEmployeesRepository
     {
+        private readonly RepositoryContext _context;
+        public EmployeesRepository(RepositoryContext repositoryContext)
+        {
+            this._context = repositoryContext;
+        }
         public IEnumerable<Employee> GetAllEmployees()
         {
-            return null;
+            return _context.Employees;
         }
     }
 }

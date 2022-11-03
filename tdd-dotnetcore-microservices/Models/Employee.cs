@@ -5,9 +5,9 @@ namespace tdd_dotnetcore_microservices.Models
 {
     public class Employee : IEquatable<Employee>
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         private long _id;
 
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long Id
         {
             get { return _id; }
