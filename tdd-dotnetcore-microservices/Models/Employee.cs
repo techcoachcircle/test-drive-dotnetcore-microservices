@@ -10,7 +10,7 @@ namespace tdd_dotnetcore_microservices.Models
 
         public long Id
         {
-            get { return 0; }
+            get { return _id; }
             set { _id = value; }
         }
 
@@ -18,7 +18,7 @@ namespace tdd_dotnetcore_microservices.Models
 
         public string Name
         {
-            get { return null; }
+            get { return _name; }
             set { _name = value; }
         }
 
@@ -26,7 +26,7 @@ namespace tdd_dotnetcore_microservices.Models
 
         public int Age
         {
-            get { return 0; }
+            get { return _age; }
             set { _age = value; }
         }
 

@@ -1,17 +1,11 @@
-﻿using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc.Testing;
-using Microsoft.AspNetCore.TestHost;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Logging.Abstractions;
+﻿using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.Extensions.DependencyInjection;
 using Moq;
 using Newtonsoft.Json;
 using NUnit.Framework;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Net.Http.Json;
 using System.Threading.Tasks;
-using tdd_dotnetcore_microservices.Models;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using tdd_dotnetcore_microservices.Services.Interfaces;
 
 namespace tdd_dotnetcore_microservices.Test.Controllers
@@ -30,6 +24,7 @@ namespace tdd_dotnetcore_microservices.Test.Controllers
                                         builder.ConfigureServices(services =>
                                         {
                                             // set up services
+                                            services.Replace(ServiceDescriptor.Scoped(typeof(IEmployeesService), _ => mockEmployeeService.Object));
                                         });
                                     });
 
