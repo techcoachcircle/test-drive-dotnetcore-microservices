@@ -1,6 +1,8 @@
 # Step-wise TDD Code Samples for .NET core microservices
+This is a repo with links to working tests and code to demonstrate the workflow of building a .NET core microservice in C# using Test Driven Development (TDD)
 
-## Steps
+## High-level blueprint of Test Driving a .NET core microservice
+Perform the following steps in the same order.
 
 - Step - 1: [Failing HTTP API test with a real DB](https://github.com/techcoachcircle/test-drive-dotnetcore-microservices/compare/6a87da8eb5b66cfaf39d2cc73f81a33738c97449...14d056a43863907389eff47801d15a8ec5210347)
 - Step - 2: [Failing no-HTTP test with a fake DB](https://github.com/techcoachcircle/test-drive-dotnetcore-microservices/compare/14d056a43863907389eff47801d15a8ec5210347...19e9128e22c33e6bdb3ceafbbf8383553161ca4b)
